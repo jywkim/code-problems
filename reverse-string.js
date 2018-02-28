@@ -13,3 +13,11 @@
 // var reverseString = function(s) {
 //
 // };
+var reverseString = function(s) {
+  var newString = "";
+  for (var i = s.length - 1; i >= 0; i--) {
+      newString += s[i];
+  }
+  return newString;
+}
+console.log(reverseString('hello'));
