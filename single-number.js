@@ -13,3 +13,11 @@
 // var singleNumber = function(nums) {
 //
 // };
+var singleNumber = function(nums) {
+  var result = 0;
+  for (var i = 0; i < nums.length; i++) {
+      result ^= nums[i];
+  }
+  return result;
+};
+console.log(singleNumber([1, 1, 2, 2, 3, 4, 4, 5, 5]));
