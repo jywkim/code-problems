@@ -21,3 +21,16 @@
 // var maxProfit = function(prices) {
 //
 // };
+var maxProfit = function(prices) {
+  var profit = 0;
+  for (var i = 0; i < prices.length - 1; i++) {
+    for (var j = i + 1; j < prices.length; j++) {
+      var calProfit = prices[j] - prices[i];
+      if (calProfit > profit) {
+        profit = calProfit;
+      }
+    }
+  }
+  return profit;
+};
+console.log(maxProfit([7, 1, 5, 3, 6, 4]));
