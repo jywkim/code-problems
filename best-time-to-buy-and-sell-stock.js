@@ -34,3 +34,19 @@ var maxProfit = function(prices) {
   return profit;
 };
 console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+
+var maxProfit = function(prices) {
+  var min = Number.MAX_SAFE_INTEGER;
+  var profit = 0;
+  for (var i = 0; i < prices.length; i++) {
+    if (prices[i] < min) {
+      min = prices[i];
+    }
+    var calProfit = prices[i] - min;
+    if (calProfit > profit) {
+      profit = calProfit;
+    }
+  }
+  return profit;
+};
+console.log(maxProfit([7, 1, 5, 3, 6, 4]));
