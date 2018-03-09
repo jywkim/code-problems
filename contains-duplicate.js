@@ -23,3 +23,15 @@ var containsDuplicate = function(nums) {
 };
 console.log(containsDuplicate([1, 2, 3, 4, 5]));
 console.log(containsDuplicate([1, 2, 3, 3, 5]));
+
+var containsDuplicate = function(nums) {
+  nums.sort();
+  for (var i = 0; i < nums.length - 1; i++) {
+    if (nums[i] == nums[i + 1]) {
+      return true;
+    }
+  }
+  return false;
+};
+console.log(containsDuplicate([1, 5, 2, 4, 3]));
+console.log(containsDuplicate([1, 3, 2, 5, 3]));
