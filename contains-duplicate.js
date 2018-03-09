@@ -35,3 +35,17 @@ var containsDuplicate = function(nums) {
 };
 console.log(containsDuplicate([1, 5, 2, 4, 3]));
 console.log(containsDuplicate([1, 3, 2, 5, 3]));
+
+var containsDuplicate = function(nums) {
+  var keep = [];
+  for (var i in nums) {
+    if (keep.indexOf(nums[i]) < 0) {
+      keep.push(nums[i]);
+    } else {
+      return true;
+    }
+  }
+  return false;
+};
+console.log(containsDuplicate([1, 5, 2, 4, 3]));
+console.log(containsDuplicate([1, 3, 2, 5, 3]));
