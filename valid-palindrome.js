@@ -18,3 +18,10 @@
 // var isPalindrome = function(s) {
 //
 // };
+var isPalindrome = function(s) {
+  var str = s.toLowerCase().replace(/[^A-Za-z0-9]/g, "");
+  var rev = str.split("").reverse().join("");
+  return rev === str;
+};
+console.log(isPalindrome("A man, a plan, a canal: Panama"));
+console.log(isPalindrome("race a car"));
