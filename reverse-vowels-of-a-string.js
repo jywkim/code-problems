@@ -19,3 +19,25 @@
 // var reverseVowels = function(s) {
 //
 // };
+var reverseVowels = function(s) {
+  var vowels = [];
+
+  for (var i = 0; i < s.length; i++) {
+    if ((/^[aeiou]$/i).test(s[i])) {
+      vowels.push(s[i]);
+    }
+  }
+
+  var v = vowels.length - 1;
+  var sArray = s.split("");
+
+  for (var j = 0; j < sArray.length; j++) {
+    if ((/^[aeiou]$/i).test(sArray[j])) {
+      sArray[j] = vowels[v--];
+    }
+  }
+
+  return sArray.join("");
+};
+console.log(reverseVowels("hello"));
+console.log(reverseVowels("leetcode"));
