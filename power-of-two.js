@@ -5,12 +5,12 @@
 // Example 1:
 // Input: 1
 // Output: true
-// Explanation: 20 = 1
+// Explanation: 2^0 = 1
 //
 // Example 2:
 // Input: 16
 // Output: true
-// Explanation: 24 = 16
+// Explanation: 2^4 = 16
 //
 // Example 3:
 // Input: 218
@@ -24,3 +24,15 @@
 // var isPowerOfTwo = function(n) {
 //
 // };
+var isPowerOfTwo = function(n) {
+  if (n <= 0) return false;
+  if (n === 1) return true;
+  while (n>3) {
+    if (n%2 != 0) return false;
+    n = parseInt(n/2);
+  }
+  return n%2 === 0;
+};
+console.log(isPowerOfTwo(1));
+console.log(isPowerOfTwo(16));
+console.log(isPowerOfTwo(218));
