@@ -29,3 +29,18 @@
 // var isPowerOfThree = function(n) {
 //
 // };
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isPowerOfThree = function(n) {
+  while (n > 2) {
+    if (n % 3 !== 0) return false;
+    n = parseInt(n/3);
+  }
+  return n == 1;
+};
+console.log(isPowerOfThree(27));
+console.log(isPowerOfThree(0));
+console.log(isPowerOfThree(9));
+console.log(isPowerOfThree(45));
