@@ -30,3 +30,23 @@
 // var rotate = function(nums, k) {
 //
 // };
+var rotate = function(nums, k) {
+  var step = k % nums.length;
+  var temp = [];
+
+  for (var i = step - 1; i >= 0; i--) {
+    var index = nums.length - 1 - i;
+    temp.push(nums[index]);
+  }
+
+  for (var j = nums.length - 1; j >= 0; j--) {
+    if (j >= step) {
+      nums[j] = nums[j - step];
+    } else {
+      nums[j] = temp[j];
+    }
+  }
+  return nums;
+};
+console.log(rotate([1, 2, 3, 4, 5, 6, 7], 3));
+console.log(rotate([-1, -100, 3, 99], 2));
