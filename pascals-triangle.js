@@ -22,3 +22,23 @@
 // var generate = function(numRows) {
 //
 // };
+var generate = function(numRows) {
+  if (numRows == 0) return [];
+
+  var triangle = [[1]];
+
+  for (var i = 1; i < numRows; i++) {
+    var prevRow = triangle[i-1];
+    var curRow = [1];
+
+    for (var j = 1; j <= i; j++) {
+      var pre = prevRow[j-1];
+      var cur = prevRow[j] ? prevRow[j] : 0;
+      curRow.push(pre+cur);
+    }
+    triangle.push(curRow);
+  }
+
+  return triangle;
+};
+console.log(generate(5));
