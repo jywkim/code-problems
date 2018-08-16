@@ -19,3 +19,21 @@
 // var getRow = function(rowIndex) {
 //
 // };
+var getRow = function(rowIndex) {
+  if (rowIndex == 0) return [1];
+  if (rowIndex == 1) return [1,1];
+
+  var array = [1];
+
+  for (var i = 1; i <= rowIndex; i++) {
+    var prev = array[i-1];
+    for (var j = 1; j < i; j++) {
+      var cur = array[j] ?　array[j] : 0;
+      array[j] = prev + cur;
+      prev = cur;
+    }
+    array.push(1);
+  }
+  return array;
+};
+console.log(getRow(3));
