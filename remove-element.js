@@ -36,3 +36,18 @@
 // var removeElement = function(nums, val) {
 //
 // };
+var removeElement = function(nums, val) {
+  if (nums.length == 0) return nums.length;
+  if (nums.indexOf(val) < 0) return nums.length;
+
+  var count = 0;
+  for (var i = 0, max = nums.length; i < max; i++) {
+    if (nums[i] != val) {
+      nums[count++] = nums[i];
+    }
+  }
+
+  return count;
+};
+console.log(removeElement([3,2,2,3], 3));
+console.log(removeElement([0,1,2,2,3,0,4,2], 2));
